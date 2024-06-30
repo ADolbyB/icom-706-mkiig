@@ -1,0 +1,58 @@
+\documentclass[11pt, letterpaper]{article}
+\usepackage[margin=1in]{geometry}
+% \usepackage[top=1in, bottom=1in, left=0.75in, right=0.75in, paperwidth=8.5in, paperheight=11in]{geometry}
+\usepackage{amsfonts, amssymb, amsmath}
+\usepackage{tikz, pgfplots}
+\usepackage{graphicx} % insert image files
+\usepackage{float} % [H] to put images 'HERE'
+\usepackage{caption} % library for caption text
+
+\title{Icom IC-706 MkIIG Out of Band Modification}
+\author{by Joel Brigida}
+\date{} % leave blank for no date or \today for current date.
+\pgfplotsset{compat=1.18} % fix pgfplots compatibility error
+\captionsetup[figure]{font=footnotesize,labelfont=footnotesize}
+
+\begin{document}
+\maketitle
+\thispagestyle{empty} % Remove Title Page Number
+
+\hfill \break
+\hfill \break
+\hfill \break
+
+\begin{figure}[H] % Place image HERE. Also valid: [t] = TOP, [b] = BOTTOM. Note: [H] requires float pkg
+    \centering % center the image and scale to 100% of the text width:
+    \includegraphics[width=1.0\textwidth]{../../assets/other/ic706mkiig_stock.jpg} % also valid: [scale=x.x], [height=X.Xin], [width=X.Xin]
+    \caption{The Icom IC-706 MkIIG. [image credit: rigpix.com]} % Place caption BELOW image.
+\end{figure}
+
+\newpage
+\setcounter{page}{1} % Make Page #1 after the title page.
+
+\begin{center}
+    \textbf{Description of the Problem:}
+\end{center}
+
+\hspace{\parindent}This is a modification which allows the radio to transmit out-of-band. Such a modification
+is necessary if you are a member of the Military Auxiliary Radio System (MARS), in which out-of-band operation 
+is permitted legally on an FCC Part 97 radio meant for the ham bands. This modification is colloquially referred to 
+as a ``MARS Mod''.
+
+\hspace{\parindent}DISCLAIMER: Please do not use this modification for anything else, like illegally transmitting 
+on the GMRS band. I do not recommended this on a Part 97 Radio. GMRS is FCC Part 95 and as such must use either 
+dedicated FCC Part 95 radios for GMRS, or FCC Part 90 radios that are bandsplit appropriately, like a 400 to 470MHz
+or a 450MHz to 512MHz band split, either of which will cover the 462MHz and 467MHz channels. 
+Another (weak) justification for this modification is the ``Life or Death'' scenario, where the operation 
+on any available frequency is allowed in the case of human life in danger. This is a weak case because it is more
+applicable to a citizen picking up a police officer's radio and calling in an ``Officer Down, Shots Fired!!'' which
+they may have just witnessed. Such a transmission where one is otherwise not permitted to operate is legally 
+authorized in such a scenario. Alternatively, calling for help on GMRS from your HAM radio will do you no good!!
+
+\newpage
+\begin{center}
+    \textbf{Repair Procedure:}
+\end{center}
+
+
+\end{document}
