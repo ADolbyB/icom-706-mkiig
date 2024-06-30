@@ -34,4 +34,40 @@
 then the entire unit may not turn on. I began to notice this rapid power cycling issue when going over bumps
 at first, until the radio quit entirely.
 
+\hspace{\parindent}This is a faily straightforward repair. There is a broken trace on the bottom side of the top
+front PCB, which is under the black rubber pad pictured in Figure 2. Most of the work required for the repair is 
+gaining access to the underside of the top front board. Care must be taken to NOT DAMAGE the RF coax under the
+covers of the radio.
+
+\begin{figure}[H] % Place image HERE. Also valid: [t] = TOP, [b] = BOTTOM. Note: [H] requires float pkg
+    \centering % center the image and scale to 40% of the text width:
+    \includegraphics[height=6.7in]{../../assets/powerRepair/Step1a.jpg} % also valid: [scale=x.x], [height=X.Xin], [width=X.Xin]
+    \caption{Accessing the bottom of the top front PCB.} % Place caption BELOW image.
+\end{figure}
+
+\hspace{\parindent}Notice that the black spacer pad on the PCB in Figure 2 has some oxidation on it, as well as 
+where the pad contacts the case on the underside of the PCB. Looking a bit closer reveals a trace running directly 
+underneath the black pad, which is shown in Figure 3 below:
+
+\begin{figure}[H] % Place image HERE. Also valid: [t] = TOP, [b] = BOTTOM. Note: [H] requires float pkg
+    \centering % center the image and scale to 100% of the text width:
+    \includegraphics[height=7.0in]{../../assets/powerRepair/Step1b.jpg} % also valid: [scale=x.x], [height=X.Xin], [width=X.Xin]
+    \caption{This trace runs directly underneath the black pad.} % Place caption BELOW image.
+\end{figure}
+
+\newpage
+\begin{center}
+    \textbf{Repair Procedure:}
+\end{center}
+
+\hspace{\parindent}The black pad must be removed to reveal the extent of PCB damage. This is shown in figure 4 
+below. Notice on the left side that removing the black pad results in a thin layer left behind. Next, the board
+must be cleaned and prepped so the broken trace can be soldered back to a closed circuit. 
+
+\begin{figure}[H] % Place image HERE. Also valid: [t] = TOP, [b] = BOTTOM. Note: [H] requires float pkg
+    \centering % center the image and scale to 100% of the text width:
+    \includegraphics[height=6.5in]{../../assets/powerRepair/Step2a.jpg} % also valid: [scale=x.x], [height=X.Xin], [width=X.Xin]
+    \caption{A damaged trace is revealed under the corrosion on the pad.} % Place caption BELOW image.
+\end{figure}
+
 \end{document}
