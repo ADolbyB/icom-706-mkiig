@@ -1,0 +1,37 @@
+\documentclass[11pt, letterpaper]{article}
+\usepackage[margin=1in]{geometry}
+% \usepackage[top=1in, bottom=1in, left=0.75in, right=0.75in, paperwidth=8.5in, paperheight=11in]{geometry}
+\usepackage{amsfonts, amssymb, amsmath}
+\usepackage{tikz, pgfplots}
+\usepackage{graphicx} % insert image files
+\usepackage{float} % [H] to put images 'HERE'
+\usepackage{caption} % library for caption text
+
+\title{Icom IC-706 MkIIG Power Cycling Repair}
+\author{by Joel Brigida}
+\date{} % leave blank for no date or \today for current date.
+\pgfplotsset{compat=1.18} % fix pgfplots compatibility error
+\captionsetup[figure]{font=footnotesize,labelfont=footnotesize}
+
+\begin{document}
+\maketitle
+\thispagestyle{empty} % Remove Title Page Number
+
+\begin{figure}[H] % Place image HERE. Also valid: [t] = TOP, [b] = BOTTOM. Note: [H] requires float pkg
+    \centering % center the image and scale to 100% of the text width:
+    \includegraphics[width=1.0\textwidth]{../../assets/other/ic706mkiig_stock.jpg} % also valid: [scale=x.x], [height=X.Xin], [width=X.Xin]
+    \caption{The Icom IC-706 MkIIG. [image credit: rigpix.com]} % Place caption BELOW image.
+\end{figure}
+
+\newpage
+\setcounter{page}{1} % Make Page #1 after the title page.
+
+\begin{center}
+    \textbf{Description of the Problem:}
+\end{center}
+
+\hspace{\parindent}This problem can be described as a random cycling of the radio power, and if severe enough,
+then the entire unit may not turn on. I began to notice this rapid power cycling issue when going over bumps
+at first, until the radio quit entirely.
+
+\end{document}
