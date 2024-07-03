@@ -1,7 +1,8 @@
-\documentclass[11pt, letterpaper]{article}
-\usepackage[margin=1in]{geometry}
-% \usepackage[top=1in, bottom=1in, left=0.75in, right=0.75in, paperwidth=8.5in, paperheight=11in]{geometry}
+\documentclass{report}
+\usepackage[margin=0.75in, paperwidth=8.5in, paperheight=11in]{geometry}
+%\usepackage[top=0in, bottom=0.75in, left=0.75in, right=0.75in, paperwidth=8.5in, paperheight=11in]{geometry}
 \usepackage{amsfonts, amssymb, amsmath}
+\usepackage{hyperref} % use hyperlinks
 \usepackage{tikz, pgfplots}
 \usepackage{graphicx} % insert image files
 \usepackage{float} % [H] to put images 'HERE'
@@ -13,46 +14,123 @@
 \pgfplotsset{compat=1.18} % fix pgfplots compatibility error
 \captionsetup[figure]{font=footnotesize,labelfont=footnotesize}
 
+\renewcommand{\contentsname}{Table of Contents:} % Custom name for Table of Contents
+
 \begin{document}
-\maketitle
-\thispagestyle{empty} % Remove Title Page Number
 
-\hfill \break
-\hfill \break
-\hfill \break
+% Custom titlepage instead of the default \maketitle for report class.
+\begin{titlepage}
+    \centering
+    \vspace*{1cm}
 
-\begin{figure}[H] % Place image HERE. Also valid: [t] = TOP, [b] = BOTTOM. Note: [H] requires float pkg
-    \centering % center the image and scale to 100% of the text width:
-    \includegraphics[width=1.0\textwidth]{../../assets/other/ic706mkiig_stock.jpg} % also valid: [scale=x.x], [height=X.Xin], [width=X.Xin]
-    \caption{The Icom IC-706 MkIIG. [image credit: rigpix.com]} % Place caption BELOW image.
-\end{figure}
+    % Title and subtitle are enclosed between two rules.
+    \rule{\textwidth}{1pt}
 
-\newpage
+    % Title
+    \vspace{.7\baselineskip}
+    {\huge \textbf{Icom IC-706 MkIIG \\ \vspace*{.5cm} Out of Band [MARS] Modification}}
+
+    % Subtitle
+    \vspace*{.5cm}
+    {\LARGE by Joel Brigida}
+    
+    \rule{\textwidth}{1pt}
+    \vspace{1cm}
+
+    % Set this size for the remaining titlepage.
+    \large
+
+    % Authors side by side, using two minipages as a trick.
+    \begin{minipage}{.5\textwidth}
+        \centering
+        Joel Brigida \\
+        % src: https://www.overleaf.com/latex/templates/sample-report-title-page-for-an-university-assignment-or-project/qwqpmbbmfygn
+        {\normalsize \texttt{\href{https://joelbrigida.com}{Website}}} \, {\normalsize \texttt{\href{mailto:joel@joelbrigida.com}{Email}}}
+    \end{minipage}
+
+    % More authors can be inserted here with additional minipages.
+    \vspace{3cm}
+
+    % Report logo.
+    \includegraphics[width=.7\textwidth]{../../assets/other/ic706mkiig_stock.jpg} % Image Credit: rigpix.com
+    \vfill
+
+    % University and date information at the bottom of the titlepage.
+    Joel Brigida \\
+    R \& D, Engineering Dept. \\
+    Dark Ridge, LLC \\
+    2024-06-30 \\
+
+\end{titlepage}
+
+\tableofcontents
 \setcounter{page}{1} % Make Page #1 after the title page.
 
 \begin{center}
-    \textbf{Description of the Problem:}
+    \chapter{\textbf{Preliminary Procedures:}}  % Note "chapter" designation for "report" class doc.
 \end{center}
 
-\hspace{\parindent}This is a modification which allows the radio to transmit out-of-band. Such a modification
-is necessary if you are a member of the Military Auxiliary Radio System (MARS), in which out-of-band operation 
-is permitted legally on an FCC Part 97 radio meant for the ham bands. This modification is colloquially referred to 
-as a ``MARS Mod''.
+\hspace{\parindent}Before working on the radio, please be sure that it is disconnected from all power sources. You
+should have a static mat with wriststrap to guard against ESD (Electrostatic Discharge). Only the radio body needs 
+to be worked on for this repair, so the head should be removed for that purpose, as shown in Figure 1.1.
+
+\begin{figure}[H] % Place image HERE. Also valid: [t] = TOP, [b] = BOTTOM. Note: [H] requires float pkg
+    \centering % center the image and scale to 100% of the text width:
+    \includegraphics[height=5.0in]{../../assets/other/ESDmat.jpg} % also valid: [scale=x.x], [height=X.Xin], [width=X.Xin]
+    \caption{Ground the static mat and then ground yourself to the component and/or static mat.} % Place caption BELOW image.
+\end{figure}
+
+\begin{center}
+    \chapter{\textbf{Description of the Modification:}}
+\end{center}
+
+\hspace{\parindent}This modification allows the radio to transmit out-of-band. Such a modification
+is necessary if, for example, you are a member of the Military Auxiliary Radio System (MARS), in which out-of-band 
+operation is permitted legally on an FCC Part 97 radio meant for the ham bands. This modification is colloquially 
+referred to as a ``MARS Mod''.
 
 \hspace{\parindent}DISCLAIMER: Please do not use this modification for anything else, like illegally transmitting 
-on the GMRS band. I do not recommended this on a Part 97 Radio. GMRS is FCC Part 95 and as such must use either 
-dedicated FCC Part 95 radios for GMRS, or FCC Part 90 radios that are bandsplit appropriately, like a 400 to 470MHz
-or a 450MHz to 512MHz band split, either of which will cover the 462MHz and 467MHz channels. 
-Another (weak) justification for this modification is the ``Life or Death'' scenario, where the operation 
-on any available frequency is allowed in the case of human life in danger. This is a weak case because it is more
-applicable to a citizen picking up a police officer's radio and calling in an ``Officer Down, Shots Fired!!'' which
-they may have just witnessed. Such a transmission where one is otherwise not permitted to operate is legally 
-authorized in such a scenario. Alternatively, calling for help on GMRS from your HAM radio will do you no good!!
+on the GMRS band or the CB band. I do not recommended this on a Part 97 Radio. For Example: GMRS is FCC Part 95 
+and as such must use either dedicated FCC Part 95 radios for GMRS, or FCC Part 90 radios that are bandsplit 
+appropriately, like a 400 to 470MHz or a 450MHz to 512MHz band split, either of which will cover the 462MHz and 
+467MHz GMRS channels. Another (weak) justification for this modification is the ``Life or Death'' scenario, where 
+the operation on any available frequency is allowed in the case of human life in danger. This is a weak case 
+because it is more applicable to a citizen picking up a police officer's radio and calling in an ``Officer 
+Down, Shots Fired!!'' which they may have just witnessed. Such a transmission where one is otherwise not 
+permitted to operate is legally authorized in such a scenario. Alternatively, calling for help on GMRS or CB from 
+your HAM radio will do you no good!!
 
-\newpage
+\hspace{\parindent}Another DISCLAIMER: I am not a lawyer and the above is not intended to be legal advice in any 
+capacity. Do your own research and make sure you have the proper equipment, licenses and know the rules for the 
+appropriate RF bands you are operating on. If any of this goes over your head, please stop and have someone with 
+the proper knowledge perform this modification.
+
 \begin{center}
-    \textbf{Repair Procedure:}
+    \chapter{\textbf{Modification Procedure:}}
 \end{center}
 
+\hspace{\parindent}Starting this modification requires detaching the remote head, and then removing the top cover 
+of the IC-706. The top cover is the cover with the speaker, and please note that the speaker can be left attached 
+to the cover during the procedure. There are 5 Phillips-style screws: 3 on the face of the top panel, and one on
+each side. The cover then flips up toward the front. Refer to Figure 3.1 for a picture with the cover removed.
+The speaker wire lead can be disconnected as shown.
+
+\begin{figure}[H] % Place image HERE. Also valid: [t] = TOP, [b] = BOTTOM. Note: [H] requires `float` pkg
+    \centering % center the image and scale to 100% of the text width:
+    \includegraphics[height=4.0in]{../../assets/other/remTopCover.jpg} % also valid: [scale=x.x], [height=X.Xin], [width=X.Xin]
+    \caption{This modification requires removal of the top cover [5 screws] as shown.} % Place caption BELOW image.
+\end{figure}
+
+\newpage
+
+\hspace{\parindent}After the top cover is removed, left of center on the front board is a row of jumper pads. 
+Refer to figure 3.2 for the exact location. The only resistor in the row of jumper pads is the one that must be 
+removed.
+
+\begin{figure}[H] % Place image HERE. Also valid: [t] = TOP, [b] = BOTTOM. Note: [H] requires `float` pkg
+    \centering % center the image and scale to 100% of the text width:
+    \includegraphics[height=5in]{../../assets/OOBmod/beforeMod1.jpg} % also valid: [scale=x.x], [height=X.Xin], [width=X.Xin]
+    \caption{Location of the resistor that must be removed for the MARS mod to work.} % Place caption BELOW image.
+\end{figure}
 
 \end{document}
