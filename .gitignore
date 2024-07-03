@@ -12,6 +12,11 @@
 *.cb2
 .*.lb
 
+## picture files: not necessary for documents
+*.jpg
+*.jpeg
+*.png
+
 ## Intermediate documents:
 *.dvi
 *.xdv
