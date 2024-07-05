@@ -1,12 +1,6 @@
-# Icom IC-706 MkII-G Repairs and Modifications:
+# Icom IC-706 MkIIG Repairs and Modifications:
 
-### This repo documents common repairs and mods I have made to my Icom IC-706 MkIIG ham radio.
-
-#### Documents for Download:
-
-- [Icom IC-706 MkIIG Out of Band Modification](https://github.com/ADolbyB/icom-706-mkiig/blob/main/docs/OOBmod/OOBmod.pdf)
-- [Icom IC-706 MkIIG Power Cycling Repair](https://github.com/ADolbyB/icom-706-mkiig/blob/main/docs/pwrRepair/powerRepair.pdf)
-- [Icom IC-706 MkIIG Screen Polarizer Repair](https://github.com/ADolbyB/icom-706-mkiig/blob/main/docs/screenRepair/screenRepair.pdf)
+- This repo documents common repairs and modifications I have made to my Icom IC-706 MkIIG ham radio.
 
 <br><br><br>
 <div align="center">
