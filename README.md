@@ -5,9 +5,14 @@ as well as an archive of publically available manuals for the radio
 
 ## PDF Downloads:
 
-```code
-Here we can have badges/links that link directly to the PDFs for download...
-```
+<p align="center">
+    <a href="https%3A%2F%2Fgithub.com%2FADolbyB%2Ficom-706-mkiig%2Fblob%2Fmain%2Fdocs%2Fmanuals%2FIC-706MK2G_IM.pdf" title="Download Instruction Manual"><img alt="Icom Instruction Manual DL" src="https://img.shields.io/badge/PDF-iCom_Instruction_Manual-blue?style=for-the-badge&link=https%3A%2F%2Fgithub.com%2FADolbyB%2Ficom-706-mkiig%2Fblob%2Fmain%2Fdocs%2Fmanuals%2FIC-706MK2G_IM.pdf"></a>&nbsp;&nbsp;
+    <!-- <a href="https%3A%2F%2Fgithub.com%2FADolbyB%2Ficom-706-mkiig%2Fblob%2Fmain%2Fdocs%2Fmanuals%2FIC-706MK2G_SM.pdf" title="Download Service Manual"><img alt="Icom Service Manual DL" src="https://img.shields.io/badge/PDF-iCom_Service_Manual-blue?style=for-the-badge&link=https%3A%2F%2Fgithub.com%2FADolbyB%2Ficom-706-mkiig%2Fblob%2Fmain%2Fdocs%2Fmanuals%2FIC-706MK2G_SM.pdf"></a>&nbsp;&nbsp;
+    <a href="https%3A%2F%2Fgithub.com%2FADolbyB%2Ficom-706-mkiig%2Fblob%2Fmain%2Fdocs%2Fmanuals%2FIC-706MK2G_OG.pdf" title="Download Operating Guide"><img alt="Icom Operating Guide DL" src="https://img.shields.io/badge/PDF-iCom_Operating_Guide-blue?style=for-the-badge&link=https%3A%2F%2Fgithub.com%2FADolbyB%2Ficom-706-mkiig%2Fblob%2Fmain%2Fdocs%2Fmanuals%2FIC-706MK2G_OG.pdf"></a>&nbsp;&nbsp; -->
+</p>
+
+---
+
 <br><br>
 <div align="center">
     <img src="./img/ic706.jpg" alt="IC-706" width="800" /><br />
