@@ -14,37 +14,56 @@
 }
 \let\oldurl\url                         % Makes \url{} automatically use a custom size.
 \renewcommand{\url}[1]{{\small\oldurl{#1}}} % custom \small \url size
+
 % ======================= Document Start ===================================
 \begin{document}
+
 % ====================== Title Page Start ==================================
-\title{Icom IC-706 MkIIG Power Cycling Repair}                         
-
-\medskip
+\title{Icom IC-706 MkIIG Power Cycling Repair}
+\author{Joel M. Brigida}
 \date{}                                 % leave blank for no date or \today for current date.
-\author{Written in \LaTeX\ by Joel M. Brigida} 
+\thispagestyle{empty}                   % No page number on title page
+
+\begin{titlepage}                       % Custom titlepage instead of the default \maketitle.
+    \centering
+    \vspace*{1cm}
+
+    \rule{\textwidth}{1pt}              % Top title rule (bar)
+
+    \vspace{.7\baselineskip}            % Title
+    {\huge \textbf{Icom IC-706 MkIIG \\ \vspace*{.5cm}}}
+
+    \LARGE Power Cycling Repair         % Subtitle
+    
+    \rule{\textwidth}{1pt}              % Bottom title rule (bar)
+    \vspace{1cm}
+    \large                              % Set this size for the remaining titlepage.
+    Written in \LaTeX\
+    \vspace{3cm}                        % More authors can be inserted here with additional minipages.
+
+    \includegraphics[width=.7\textwidth]{../../img/ic706mkiig_lrg.jpg}
+    \begin{figure}[H]                   % Place caption HERE. Note: [H] requires float pkg
+        \centering                      % center caption
+        \caption{The Icom IC-706 MkIIG. [image credit: rigpix.com]} % Place caption BELOW graphics.
+    \end{figure}
+    \vfill
+
+    Joel Brigida, BSCE \\               % University and date information at bottom of titlepage.
+    R \& D, Engineering. \\
+    % src: https://www.overleaf.com/latex/templates/sample-report-title-page-for-an-university-assignment-or-project/qwqpmbbmfygn
+    \begin{minipage}{.5\textwidth}
+        \centering
+        {\normalsize \texttt{\href{https://github.com/ADolbyB/}{GitHub}}} \, 
+        {\normalsize \texttt{\href{https://www.linkedin.com/in/joelmbrigida/}{LinkedIn}}}
+    \end{minipage}
+
+\end{titlepage}
 
 \medskip
-\maketitle                              % Create Document Title
-\thispagestyle{empty}                   % No page number on title page
 \pagenumbering{arabic}                  % 1,2,3 type page numbering.
-
-\hfill \break
-\hfill \break
-\hfill \break
-\hfill \break
-\hfill \break
-\hfill \break
-
-\begin{figure}[H]                       % Place image HERE. Note: [H] requires float pkg
-    \centering                          % center image, scale to 100% of the text width:
-    \includegraphics[width=1.0\textwidth]{../../img/ic706mkiig_lrg.jpg} 
-    % also valid: [scale=x.x], [height=X.Xin], [width=X.Xin]
-    \caption{The Icom IC-706 MkIIG. [image credit: rigpix.com]} % Place caption BELOW image.
-\end{figure}
-
-\clearpage                              % Go to the next page (which will become page 1)
 \setcounter{page}{1}                    % Forces THIS page to be page 1
 % === ToC Page  1 ==========================================================
+\renewcommand{\contentsname}{Table of Contents} % Custom name for Table of Contents
 
 \begin{center}
     \item \tableofcontents                    % Table of Contents appears on page 1
