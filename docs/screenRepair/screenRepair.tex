@@ -1,6 +1,5 @@
 \documentclass[12pt,letterpaper]{article}
-\usepackage[margin=1in]{geometry}       % 1 inch margins
-%\usepackage{amsfonts, amssymb, amsmath} % all the fun math stuff
+\usepackage[margin=0.75in]{geometry}    % 3/4 inch margins
 \usepackage{graphicx}                   % For images
 \usepackage{hyperref}                   % For hyperlinks
 \usepackage{caption}                    % Better captions
@@ -8,7 +7,7 @@
 \usepackage{float}                      % [H] to put images 'HERE', Also valid: [t] = TOP, [b] = BOTTOM.
 \usepackage{enumerate}                  % Customize Enumerated Lists
 \usepackage{url}                        % used for custom \url{....} methods
-\usepackage{enumitem}                   % used to break enumerated lists, insert text, and resume enumeration.
+\renewcommand{\baselinestretch}{1.1}    % set default paragraph line spacing
 \hypersetup{%
     colorlinks=true,                    % colored text rather than box outlined links (cleaner looking)
     urlcolor=blue
@@ -79,14 +78,14 @@ properties, which results in the following appearance:
 \medskip
 \begin{figure}[H]                       % Place image HERE. Note: [H] requires float pkg
     \centering                          % center image, scale to 100% of the text width:
-    \includegraphics[width=1.0\textwidth]{../../img/badPolarizerOff.jpg}
+    \includegraphics[width=0.95\textwidth]{../../img/badPolarizerOff.jpg}
     \caption{This is what a bad polarizer screen looks like when powered off.} % Place caption BELOW image.
 \end{figure}
 
 \medskip
 \begin{figure}[H]                       % Place image HERE. Note: [H] requires float pkg
     \centering                          % center image, scale to 100% of the text width:
-    \includegraphics[width=1.0\textwidth]{../../img/badPolarizer2.jpg}
+    \includegraphics[width=0.95\textwidth]{../../img/badPolarizer2.jpg}
     \caption{This is what a bad polarizer screen looks like when powered on.} % Place caption BELOW image.
 \end{figure}
 
@@ -96,4 +95,45 @@ properties, which results in the following appearance:
     \item \section{Repair Procedure}
 \end{center}
 
+\begin{center}
+    \item \subsection{Preliminary Procedure}
+\end{center}
+
+\medskip
+In order to prevent any Electrostatic Discharge (ESD), an anti-static ESD mat should be used as shown in Figure 5. 
+Be sure the mat is grounded properly. An excellent ground source is the ground lug on a household 120VAC NEMA 5-15 
+or 5-20 outlet. There are some cheap ground lug outlet adapters as seen
+\href{https://www.amazon.com/s?k=Banana+Jack+Outlet+Adapter+Universal+Ground+3+Prong+Outlet+Earth+Connection}
+{here [Amazon link]} which convert the ground lug into a banana jack.
+
+\bigskip
+\bigskip
+\begin{figure}[H]                       % Place image HERE. Note: [H] requires float pkg
+    \centering                          % center image, scale to 100% of the text width:
+    \includegraphics[height=2.25in]{../../img/ESDGrounding.jpg}
+    \caption{An example of an outlet ground lug to banana jack adapter.} % Place caption BELOW image.
+\end{figure}
+
+\clearpage
+% === Page 5 ===============================================================
+\medskip
+Using the ground lug adapter and an ESD mat kit, ground the mat to the outlet ground, preferably with the side facing 
+away from the technician. At the side facing towards the technician, clip the wrist strap to the other side of the 
+ESD mat and put the wrist strap on the non-dominant hand so it does not get in the way. Now the ESD mat and the 
+technician are all grounded and at equal potential. If you need to purchase an ESD mat kit, there are some kits 
+\href{https://www.amazon.com/s?k=ESD+mat+kit}{here [Amazon Link]}. Note the alligator clips pull off to reveal 
+banana jacks. Detach the head of the radio and place it on the ESD mat. Note that in Figure 5, the top lead needs to
+be connected to the ground lug adapter, and the bottom lead with the wrist strap can be alligator clipped to the
+mat for a proper connection.
+
+\medskip
+\begin{figure}[H]                       % Place image HERE. Note: [H] requires float pkg
+    \centering                          % center image, scale to 100% of the text width:
+    \includegraphics[width=0.9\textwidth]{../../img/staticMat.jpg}
+    \caption{Proper setup of an ESD mat with the radio body.}
+\end{figure}
+
+\medskip
+If the ESD mat does not have buttons to snap the leads onto (most do), then just use alligator clips to make the 
+connection to the mat. This still provides the proper electrical connection needed for equal potential.
 \end{document}
