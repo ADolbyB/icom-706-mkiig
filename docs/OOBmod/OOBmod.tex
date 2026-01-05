@@ -17,7 +17,6 @@
 
 % ======================= Document Start ===================================
 \begin{document}
-
 % ====================== Title Page Start ==================================
 \title{Icom IC-706 MkIIG Out of Band MARS Mod}
 \author{Joel M. Brigida}
@@ -27,7 +26,6 @@
 \begin{titlepage}                       % Custom titlepage instead of the default \maketitle.
     \centering
     \vspace*{1cm}
-
     \rule{\textwidth}{1pt}              % Top title rule (bar)
 
     \vspace{.7\baselineskip}            % Title
@@ -71,6 +69,37 @@
 \clearpage                              % Start main content on page 2
 % === Page 2 ===============================================================
 \begin{center}
+    \item \section{Disclaimer}
+\end{center}
+
+\bigskip
+Please note that none of the information in this manual is meant to be legal advise in any way. The author of
+this document does not assume any responsibility for the accuracy of the information in this document. This 
+document should be regarded as the author's own opinion, and nothing more for legal reasons even though this is a 
+well researched subject in the author's own expertise. Do your own research, make sure you have the proper 
+equipment, licenses and know the rules for the appropriate RF bands you are operating on. If any of this goes over 
+your head, please stop and have someone with the proper knowledge educate you first.
+
+Do not use this modification for anything else, like illegally transmitting on the GMRS band or the CB band. 
+I do not recommended operating there on a Part 97 Radio. The radio's VCO was not designed to operate in these ranges, 
+which results in lower power output even if the antenna is tuned for these ranges. For Example: GMRS is FCC Part 95 
+and as such must use either dedicated FCC Part 95 radios for GMRS, or FCC Part 90 radios that are bandsplit 
+appropriately, like a 400 MHz to 470 MHz or a 450 MHz to 512 MHz band split, either of which will cover the 462 MHz 
+and 467MHz GMRS channels and can properly operate there.
+
+This modification is meant for MARS operators, who operate on bands which are adjacent or nearly adjacent to the ham 
+bands. A weak justification for this modification is the ``Life or Death'' scenario, where the operation on any 
+available frequency is allowed in the case of a human life in danger. This is a weak case because calling for help 
+on GMRS or CB from your HAM radio will do no good and is a waste of time. This case is more applicable to a citizen 
+picking up a police officer's radio and calling in ``MAYDAY! Officer Down, Shots Fired!!'' which the citizen may 
+have just witnessed. Such a transmission on an RF band where one is otherwise not permitted to operate is legally 
+authorized in such a scenario only because there is a threat of life or great bodily harm. Call for help, then
+acknowledge when proper help is dispatched, and stay off the radio unless called and/or help arrives. Do not
+attempt to ``ragchew'' with dispatch.
+
+\clearpage                              % Start main content on page 2
+% === Page 3 ===============================================================
+\begin{center}
     \item \section{Preliminary Procedure}  % Note "chapter" designation for "report" class doc.
 \end{center}
 
@@ -85,7 +114,7 @@ to be worked on for this repair, so the head should be removed for that purpose,
 \end{figure}
 
 \clearpage
-% === Page 3 ===============================================================
+% === Page 4 ===============================================================
 \begin{center}
     \item \section{Description of the Modification}
 \end{center}
@@ -95,24 +124,8 @@ is necessary if, for example, you are a member of the Military Auxiliary Radio S
 operation is permitted legally on an FCC Part 97 radio meant for the ham bands. This modification is colloquially 
 referred to as a ``MARS Mod''.
 
-DISCLAIMER: Please do not use this modification for anything else, like illegally transmitting 
-on the GMRS band or the CB band. I do not recommended this on a Part 97 Radio. For Example: GMRS is FCC Part 95 
-and as such must use either dedicated FCC Part 95 radios for GMRS, or FCC Part 90 radios that are bandsplit 
-appropriately, like a 400 to 470MHz or a 450MHz to 512MHz band split, either of which will cover the 462MHz and 
-467MHz GMRS channels. Another (weak) justification for this modification is the ``Life or Death'' scenario, where 
-the operation on any available frequency is allowed in the case of human life in danger. This is a weak case 
-because it is more applicable to a citizen picking up a police officer's radio and calling in an ``Officer 
-Down, Shots Fired!!'' which they may have just witnessed. Such a transmission where one is otherwise not 
-permitted to operate is legally authorized in such a scenario. Alternatively, calling for help on GMRS or CB from 
-your HAM radio will do you no good!!
-
-Another DISCLAIMER: I am not a lawyer and the above is not intended to be legal advice in any 
-capacity. Do your own research and make sure you have the proper equipment, licenses and know the rules for the 
-appropriate RF bands you are operating on. If any of this goes over your head, please stop and have someone with 
-the proper knowledge perform this modification.
-
 \clearpage
-% === Page 4 ===============================================================
+% === Page 5 ===============================================================
 \begin{center}
     \item \section{Modification Procedure}
 \end{center}
@@ -130,7 +143,7 @@ The speaker wire lead can be disconnected as shown.
 \end{figure}
 
 \clearpage
-% === Page 5 ===============================================================
+% === Page 6 ===============================================================
 After the top cover is removed, left of center on the front board is a row of jumper pads. 
 Refer to figure 3.2 for the exact location. The only resistor in the row of jumper pads is the one that must be 
 removed.
