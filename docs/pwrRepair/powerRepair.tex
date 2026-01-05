@@ -1,77 +1,159 @@
-\documentclass[11pt, letterpaper]{article}
-\usepackage[margin=1in]{geometry}
-% \usepackage[top=1in, bottom=1in, left=0.75in, right=0.75in, paperwidth=8.5in, paperheight=11in]{geometry}
-\usepackage{amsfonts, amssymb, amsmath}
-\usepackage{tikz, pgfplots}
-\usepackage{graphicx} % insert image files
-\usepackage{float} % [H] to put images 'HERE'
-\usepackage{caption} % library for caption text
-
-\title{Icom IC-706 MkIIG Power Cycling Repair}
-\author{by Joel Brigida}
-\date{} % leave blank for no date or \today for current date.
-\pgfplotsset{compat=1.18} % fix pgfplots compatibility error
-\captionsetup[figure]{font=footnotesize,labelfont=footnotesize}
-
+\documentclass[12pt,letterpaper]{article}
+\usepackage[margin=0.75in]{geometry}    % 3/4 inch margins
+\usepackage{graphicx}                   % For images
+\usepackage{hyperref}                   % For hyperlinks
+\usepackage{caption}                    % Better captions
+\usepackage{indentfirst}                % Force Sections 1st paragraph to Indent like the rest.
+\usepackage{float}                      % [H] to put images 'HERE', Also valid: [t] = TOP, [b] = BOTTOM.
+\usepackage{enumerate}                  % Customize Enumerated Lists
+\usepackage{url}                        % used for custom \url{....} methods
+\renewcommand{\baselinestretch}{1.1}    % set default paragraph line spacing
+\hypersetup{%
+    colorlinks=true,                    % colored text rather than box outlined links (cleaner looking)
+    urlcolor=blue
+}
+\let\oldurl\url                         % Makes \url{} automatically use a custom size.
+\renewcommand{\url}[1]{{\small\oldurl{#1}}} % custom \small \url size
+% ======================= Document Start ===================================
 \begin{document}
-\maketitle
-\thispagestyle{empty} % Remove Title Page Number
+% ====================== Title Page Start ==================================
+\title{Icom IC-706 MkIIG Power Cycling Repair}                         
+
+\medskip
+\date{}                                 % leave blank for no date or \today for current date.
+\author{Written in \LaTeX\ by Joel M. Brigida} 
+
+\medskip
+\maketitle                              % Create Document Title
+\thispagestyle{empty}                   % No page number on title page
+\pagenumbering{arabic}                  % 1,2,3 type page numbering.
 
 \hfill \break
 \hfill \break
 \hfill \break
+\hfill \break
+\hfill \break
+\hfill \break
 
-\begin{figure}[H] % Place image HERE. Also valid: [t] = TOP, [b] = BOTTOM. Note: [H] requires float pkg
-    \centering % center the image and scale to 100% of the text width:
-    \includegraphics[width=1.0\textwidth]{../../assets/other/ic706mkiig_stock.jpg} % also valid: [scale=x.x], [height=X.Xin], [width=X.Xin]
+\begin{figure}[H]                       % Place image HERE. Note: [H] requires float pkg
+    \centering                          % center image, scale to 100% of the text width:
+    \includegraphics[width=1.0\textwidth]{../../img/ic706mkiig_lrg.jpg} 
+    % also valid: [scale=x.x], [height=X.Xin], [width=X.Xin]
     \caption{The Icom IC-706 MkIIG. [image credit: rigpix.com]} % Place caption BELOW image.
 \end{figure}
 
-\newpage
-\setcounter{page}{1} % Make Page #1 after the title page.
+\clearpage                              % Go to the next page (which will become page 1)
+\setcounter{page}{1}                    % Forces THIS page to be page 1
+% === ToC Page  1 ==========================================================
 
 \begin{center}
-    \textbf{Description of the Problem:}
+    \item \tableofcontents                    % Table of Contents appears on page 1
 \end{center}
 
-\hspace{\parindent}This problem can be described as a random cycling of the radio power, and if severe enough,
-then the entire unit may not turn on. I began to notice this rapid power cycling issue when going over bumps
-at first, until the radio quit entirely.
-
-\hspace{\parindent}This is a faily straightforward repair. There is a broken trace on the bottom side of the top
-front PCB, which is under the black rubber pad pictured in Figure 2. Most of the work required for the repair is 
-gaining access to the underside of the top front board. Care must be taken to NOT DAMAGE the RF coax under the
-covers of the radio.
-
-\begin{figure}[H] % Place image HERE. Also valid: [t] = TOP, [b] = BOTTOM. Note: [H] requires float pkg
-    \centering % center the image and scale to 40% of the text width:
-    \includegraphics[height=6.7in]{../../assets/powerRepair/Step1a.jpg} % also valid: [scale=x.x], [height=X.Xin], [width=X.Xin]
-    \caption{Accessing the bottom of the top front PCB.} % Place caption BELOW image.
-\end{figure}
-
-\hspace{\parindent}Notice that the black spacer pad on the PCB in Figure 2 has some oxidation on it, as well as 
-where the pad contacts the case on the underside of the PCB. Looking a bit closer reveals a trace running directly 
-underneath the black pad, which is shown in Figure 3 below:
-
-\begin{figure}[H] % Place image HERE. Also valid: [t] = TOP, [b] = BOTTOM. Note: [H] requires float pkg
-    \centering % center the image and scale to 100% of the text width:
-    \includegraphics[height=7.0in]{../../assets/powerRepair/Step1b.jpg} % also valid: [scale=x.x], [height=X.Xin], [width=X.Xin]
-    \caption{This trace runs directly underneath the black pad.} % Place caption BELOW image.
-\end{figure}
-
-\newpage
+\clearpage                              % Start main content on page 2
+% === Page 2 ===============================================================
 \begin{center}
-    \textbf{Repair Procedure:}
+    \item \section{Disclaimer}
 \end{center}
 
-\hspace{\parindent}The black pad must be removed to reveal the extent of PCB damage. This is shown in figure 4 
-below. Notice on the left side that removing the black pad results in a thin layer left behind. Next, the board
-must be cleaned and prepped so the broken trace can be soldered back to a closed circuit. 
+\bigskip
+Please note that none of the information in this manual is meant to be legal advise in any way. The author of
+this document does not assume any responsibility for the accuracy of the information in this document. This 
+document should be regarded as the author's own opinion, and nothing more for legal reasons even though this is a 
+well researched subject in the author's own expertise.
 
-\begin{figure}[H] % Place image HERE. Also valid: [t] = TOP, [b] = BOTTOM. Note: [H] requires float pkg
-    \centering % center the image and scale to 100% of the text width:
-    \includegraphics[height=6.5in]{../../assets/powerRepair/Step2a.jpg} % also valid: [scale=x.x], [height=X.Xin], [width=X.Xin]
-    \caption{A damaged trace is revealed under the corrosion on the pad.} % Place caption BELOW image.
+\clearpage
+% === Page 3 ===============================================================
+\begin{center}
+    \item \section{Problem Description}
+\end{center}
+
+\medskip
+This problem can be described as a random cycling of the radio power, and if severe enough, then the entire 
+unit may not turn on. I began to notice this rapid power cycling issue when going over bumps at first, until 
+the radio quit entirely and would not power on anymore. This problem is due to a broken trace from what appeared 
+to be humidity based moisture ingress under a black rubber pad spacer which was adhered to the PCB on top of 
+this trace. Most of the work required for the repair is gaining access to the underside of the top front board. 
+Care must be taken to NOT DAMAGE the RF coax under the covers of the radio.
+
+\clearpage
+% === Page 4 ===============================================================
+\begin{center}
+    \item \section{Repair Procedure}
+\end{center}
+
+\begin{center}
+    \item \subsection{Preliminary Procedure}
+\end{center}
+
+\medskip
+In order to prevent any Electrostatic Discharge (ESD), an anti-static ESD mat should be used as shown in Figure 5. 
+Be sure the mat is grounded properly. An excellent ground source is the ground lug on a household 120VAC NEMA 5-15 
+or 5-20 outlet. There are some cheap ground lug outlet adapters as seen
+\href{https://www.amazon.com/s?k=Banana+Jack+Outlet+Adapter+Universal+Ground+3+Prong+Outlet+Earth+Connection}
+{here [Amazon link]} which convert the ground lug into a banana jack.
+
+\bigskip
+\bigskip
+\begin{figure}[H]                       % Place image HERE. Note: [H] requires float pkg
+    \centering                          % center image, scale to 100% of the text width:
+    \includegraphics[height=2.25in]{../../img/ESDGrounding.jpg}
+    \caption{An example of an outlet ground lug to banana jack adapter.} % Place caption BELOW image.
 \end{figure}
+
+\clearpage
+% === Page 5 ===============================================================
+\medskip
+Using the ground lug adapter and an ESD mat kit, ground the mat to the outlet ground, preferably with the side facing 
+away from the technician. At the side facing towards the technician, clip the wrist strap to the other side of the 
+ESD mat and put the wrist strap on the non-dominant hand so it does not get in the way. Now the ESD mat and the 
+technician are all grounded and at equal potential. If you need to purchase an ESD mat kit, there are some kits 
+\href{https://www.amazon.com/s?k=ESD+mat+kit}{here [Amazon Link]}. Note in Figure 3 the alligator clips pull off to 
+reveal banana jacks. Detach the head of the radio and place it on the ESD mat. Note that in Figure 5, the top lead 
+needs to be connected to the ground lug adapter, and the bottom lead with the wrist strap can be alligator clipped 
+to the mat for a proper connection.
+
+\medskip
+\begin{figure}[H]                       % Place image HERE. Note: [H] requires float pkg
+    \centering                          % center image, scale to 100% of the text width:
+    \includegraphics[width=0.9\textwidth]{../../img/staticMat.jpg}
+    \caption{Proper setup of an ESD mat with the radio body.}
+\end{figure}
+
+\medskip
+If the ESD mat does not have buttons to snap the leads onto (most do), then just use alligator clips to make the 
+connection to the mat. This still provides the proper electrical connection needed for equal potential.
+
+\clearpage
+% === Page 6 ===============================================================
+\begin{center}
+    \item \subsection{Step One}
+\end{center}
+
+\medskip
+This is a faily straightforward repair. There is a broken trace on the bottom side of the top front PCB, which 
+is under the black rubber spacer.
+
+% Notice that the black spacer pad on the PCB in Figure 2 has some oxidation on it, as well as 
+% where the pad contacts the case on the underside of the PCB. Looking a bit closer reveals a trace running directly 
+% underneath the black pad, which is shown in Figure 3 below:
+
+% \medskip
+% \begin{figure}[H]                       % Place image HERE.
+%     \centering                          % center the image.
+%     \includegraphics[width=0.9\textwidth]{../../img/}
+%     \caption{Accessing the bottom of the top front PCB.} % Place caption BELOW image.
+% \end{figure}
+
+% The black pad must be removed to reveal the extent of PCB damage. This is shown in figure 4 
+% below. Notice on the left side that removing the black pad results in a thin layer left behind. Next, the board
+% must be cleaned and prepped so the broken trace can be soldered back to a closed circuit.
+
+% \medskip
+% \begin{figure}[H]                       % Place image HERE.
+%     \centering                          % center the image.
+%     \includegraphics[width=0.9\textwidth]{../../img/} 
+%     \caption{A damaged trace is revealed under the corrosion on the pad.} % Place caption BELOW image.
+% \end{figure}
 
 \end{document}
