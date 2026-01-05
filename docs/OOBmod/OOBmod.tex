@@ -72,7 +72,7 @@
     \item \section{Disclaimer}
 \end{center}
 
-\bigskip
+\medskip
 Please note that none of the information in this manual is meant to be legal advise in any way. The author of
 this document does not assume any responsibility for the accuracy of the information in this document. This 
 document should be regarded as the author's own opinion, and nothing more for legal reasons even though this is a 
@@ -97,8 +97,6 @@ authorized in such a scenario only because there is a threat of life or great bo
 acknowledge when proper help is dispatched, and stay off the radio unless called and/or help arrives. Do not
 attempt to ``ragchew'' with dispatch.
 
-\clearpage
-% === Page 3 ===============================================================
 \begin{center}
     \item \section{Description of the Modification}
 \end{center}
@@ -107,8 +105,8 @@ This modification allows the radio to transmit out-of-band. Such a modification 
 a member of the Military Auxiliary Radio System (MARS), in which out-of-band operation is permitted legally on an 
 FCC Part 97 radio meant for the ham bands. This modification is colloquially referred to as a ``MARS Mod''.
 
-\clearpage                              % Start main content on page 2
-% === Page 4 ===============================================================
+\clearpage
+% === Page 3 ===============================================================
 \begin{center}
     \item \section{Modification Procedure}
 \end{center}
@@ -117,15 +115,45 @@ FCC Part 97 radio meant for the ham bands. This modification is colloquially ref
     \item \subsection{Preliminary Procedure}
 \end{center}
 
-Before working on the radio, please be sure that it is disconnected from all power sources. You
-should have a static mat with wriststrap to guard against ESD (Electrostatic Discharge). Only the radio body needs 
-to be worked on for this repair, so the head should be removed for that purpose, as shown in Figure 1.1.
+\medskip
+In order to prevent any Electrostatic Discharge (ESD), an anti-static ESD mat should be used as shown in Figure 3. 
+Be sure the mat is grounded properly. An excellent ground source is the ground lug on a household 120VAC NEMA 5-15 
+or 5-20 outlet. There are some cheap ground lug outlet adapters as seen
+\href{https://www.amazon.com/s?k=Banana+Jack+Outlet+Adapter+Universal+Ground+3+Prong+Outlet+Earth+Connection}
+{here [Amazon link]} which convert the ground lug into a banana jack.
 
-\begin{figure}[H]                       % Place image HERE.
-    \centering                          % center the image and scale to 100% of the text width:
-    \includegraphics[height=5.0in]{../../img/staticMat.jpg} % also valid: [scale=x.x], [height=X.Xin], [width=X.Xin]
-    \caption{Ground the static mat and then ground yourself to the component and/or static mat.} % Place caption BELOW image.
+\bigskip
+\bigskip
+\begin{figure}[H]                       % Place image HERE. Note: [H] requires float pkg
+    \centering                          % center image, scale to 100% of the text width:
+    \includegraphics[height=2.25in]{../../img/ESDGrounding.jpg}
+    \caption{An example of an outlet ground lug to banana jack adapter.} % Place caption BELOW image.
 \end{figure}
+
+\clearpage
+% === Page 4 ===============================================================
+
+Before working on the radio, be sure that it is disconnected from all power sources. Only the radio body needs 
+to be worked on for this repair, so the head should be removed for that purpose. Using the ground lug adapter and an 
+ESD mat kit, ground the mat to the outlet ground, preferably with the side facing away from the technician. At the 
+side facing towards the technician, clip the wrist strap to the other side of the ESD mat and put the wrist strap on 
+the non-dominant hand so it does not get in the way. Now the ESD mat and the technician are all grounded and at 
+equal potential. If you need to purchase an ESD mat kit, there are some kits 
+\href{https://www.amazon.com/s?k=ESD+mat+kit}{here [Amazon Link]}. Note in Figure 3 the alligator clips pull off to 
+reveal banana jacks. Detach the head of the radio since it is not needed now. Note that in Figure 3, the top lead 
+needs to be connected to the ground lug adapter, and the bottom lead with the wrist strap can be alligator clipped 
+to the mat for a proper connection.
+
+\medskip
+\begin{figure}[H]                       % Place image HERE. Note: [H] requires float pkg
+    \centering                          % center image, scale to 100% of the text width:
+    \includegraphics[width=0.9\textwidth]{../../img/staticMat.jpg}
+    \caption{Proper setup of an ESD mat with the radio body.}
+\end{figure}
+
+\medskip
+If the ESD mat does not have buttons to snap the leads onto (most do), then just use alligator clips to make the 
+connection to the mat. This still provides the proper electrical connection needed for equal potential.
 
 \clearpage
 % === Page 5 ===============================================================
@@ -134,15 +162,16 @@ to be worked on for this repair, so the head should be removed for that purpose,
 \end{center}
 
 Starting this modification requires detaching the remote head, and then removing the top cover 
-of the IC-706. The top cover is the cover with the speaker, and please note that the speaker can be left attached 
-to the cover during the procedure. There are 5 Phillips-style screws: 3 on the face of the top panel, and one on
-each side. The cover then flips up toward the front. Refer to Figure 3.1 for a picture with the cover removed.
-The speaker wire lead can be disconnected as shown.
+of the radio. The top cover is the cover with the speaker, and please note that the speaker can be left attached 
+to the cover during the procedure. There are 5 Phillips style screws: 3 on the face of the top panel, and one on
+each side. The cover then flips up toward the front. Refer to Figure 4 for a picture with the cover removed.
+The speaker wire lead can be disconnected as shown by pulling the two connector halves apart.
 
-\begin{figure}[H] % Place image HERE. Also valid: [t] = TOP, [b] = BOTTOM. Note: [H] requires `float` pkg
-    \centering % center the image and scale to 100% of the text width:
-    %\includegraphics[height=4.0in]{../../assets/other/remTopCover.jpg} % also valid: [scale=x.x], [height=X.Xin], [width=X.Xin]
-    \caption{This modification requires removal of the top cover [5 screws] as shown.} % Place caption BELOW image.
+\medskip
+\begin{figure}[H]                       % Place image HERE.
+    \centering                          % center the image
+    \includegraphics[width=0.95\textwidth]{../../img/topCover.jpg}
+    \caption{Removal of the top cover [5 screws] and speaker connection.} % Place caption BELOW image.
 \end{figure}
 
 \clearpage
@@ -151,9 +180,9 @@ After the top cover is removed, left of center on the front board is a row of ju
 Refer to figure 3.2 for the exact location. The only resistor in the row of jumper pads is the one that must be 
 removed.
 
-\begin{figure}[H] % Place image HERE. Also valid: [t] = TOP, [b] = BOTTOM. Note: [H] requires `float` pkg
-    \centering % center the image and scale to 100% of the text width:
-    %\includegraphics[height=5in]{../../assets/OOBmod/beforeMod1.jpg} % also valid: [scale=x.x], [height=X.Xin], [width=X.Xin]
+\begin{figure}[H]                       % Place image HERE.
+    \centering                          % center the image
+    %\includegraphics[height=5in]{../../assets/OOBmod/beforeMod1.jpg}
     \caption{Location of the resistor that must be removed for the MARS mod to work.} % Place caption BELOW image.
 \end{figure}
 
