@@ -18,37 +18,57 @@
 \begin{document}
 % ====================== Title Page Start ==================================
 
-\title{Icom IC-706 MkIIG Screen Polarizer Repair}                         
-
-\medskip
+\title{Icom IC-706 MkIIG Screen Polarizer Repair}
+\author{Written in \LaTeX\ by Joel M. Brigida}
 \date{}                                 % leave blank for no date or \today for current date.
-\author{Written in \LaTeX\ by Joel M. Brigida} 
+\thispagestyle{empty}                   % No page number on title page
+
+\begin{titlepage}                       % Custom titlepage instead of the default \maketitle.
+    \centering
+    \vspace*{1cm}
+
+    \rule{\textwidth}{1pt}              % Top title rule (bar)
+
+    \vspace{.7\baselineskip}            % Title
+    {\huge \textbf{Icom IC-706 MkIIG \\ \vspace*{.5cm} Screen Polarizer Repair}}
+
+    \vspace*{.5cm}                      % Subtitle
+    \LARGE Written in \LaTeX\ by Joel M. Brigida
+    
+    \rule{\textwidth}{1pt}              % Bottom title rule (bar)
+    \vspace{1cm}
+    \large                              % Set this size for the remaining titlepage.
+
+    % src: https://www.overleaf.com/latex/templates/sample-report-title-page-for-an-university-assignment-or-project/qwqpmbbmfygn
+    \begin{minipage}{.5\textwidth}
+        \centering
+        Joel Brigida \\                 % Authors side by side, using two minipages as a trick.
+        {\normalsize \texttt{\href{https://github.com/ADolbyB/}{GitHub}}} \, 
+        {\normalsize \texttt{\href{https://www.linkedin.com/in/joelmbrigida/}{LinkedIn}}}
+    \end{minipage}
+
+    \vspace{3cm}                        % More authors can be inserted here with additional minipages.
+
+    \includegraphics[width=.7\textwidth]{../../img/ic706mkiig_lrg.jpg}
+    \begin{figure}[H]                   % Place caption HERE. Note: [H] requires float pkg
+        \centering                      % center caption
+        \caption{The Icom IC-706 MkIIG. [image credit: rigpix.com]} % Place caption BELOW graphics.
+    \end{figure}
+    \vfill
+
+    Joel Brigida, BSCE \\               % University and date information at bottom of titlepage.
+    R \& D, Engineering. \\
+
+\end{titlepage}
 
 \medskip
-\maketitle                              % Create Document Title
-\thispagestyle{empty}                   % No page number on title page
 \pagenumbering{arabic}                  % 1,2,3 type page numbering.
-
-\hfill \break
-\hfill \break
-\hfill \break
-\hfill \break
-\hfill \break
-\hfill \break
-
-\begin{figure}[H]                       % Place image HERE. Note: [H] requires float pkg
-    \centering                          % center image, scale to 100% of the text width:
-    \includegraphics[width=1.0\textwidth]{../../img/ic706mkiig_lrg.jpg} 
-    % also valid: [scale=x.x], [height=X.Xin], [width=X.Xin]
-    \caption{The Icom IC-706 MkIIG. [image credit: rigpix.com]} % Place caption BELOW image.
-\end{figure}
-
-\clearpage                              % Go to the next page (which will become page 1)
 \setcounter{page}{1}                    % Forces THIS page to be page 1
 % === ToC Page  1 ==========================================================
+\renewcommand{\contentsname}{Table of Contents} % Custom name for Table of Contents
 
 \begin{center}
-    \tableofcontents                    % Table of Contents appears on page 1
+    \item \tableofcontents              % Table of Contents appears on page 1
 \end{center}
 
 \clearpage                              % Start main content on page 2
