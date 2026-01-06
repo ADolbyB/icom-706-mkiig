@@ -1,0 +1,147 @@
+\documentclass[12pt,letterpaper]{article}
+\usepackage[margin=0.75in]{geometry}    % 3/4 inch margins
+\usepackage{graphicx}                   % For images
+\usepackage{textcomp}                   % for degree symbol: \textdegree
+\usepackage{hyperref}                   % For hyperlinks
+\usepackage{caption}                    % Better captions
+\usepackage{indentfirst}                % Force Sections 1st paragraph to Indent like the rest.
+\usepackage{float}                      % [H] to put images 'HERE', Also valid: [t] = TOP, [b] = BOTTOM.
+\usepackage{enumerate}                  % Customize Enumerated Lists
+\usepackage{url}                        % used for custom \url{....} methods
+\renewcommand{\baselinestretch}{1.1}    % set default paragraph line spacing
+\hypersetup{%
+    colorlinks=true,                    % colored text rather than box outlined links (cleaner looking)
+    urlcolor=blue
+}
+\let\oldurl\url                         % Makes \url{} automatically use a custom size.
+\renewcommand{\url}[1]{{\small\oldurl{#1}}} % custom \small \url size
+
+% ======================= Document Start ===================================
+\begin{document}
+
+% ====================== Title Page Start ==================================
+\title{Icom IC-706 MkIIG RX Fan Mode Modification}
+\author{Joel M. Brigida}
+\date{}                                 % leave blank for no date or \today for current date.
+\thispagestyle{empty}                   % No page number on title page
+
+\begin{titlepage}                       % Custom titlepage instead of the default \maketitle.
+    \centering
+    \vspace*{1cm}
+
+    \rule{\textwidth}{1pt}              % Top title rule (bar)
+
+    \vspace{.7\baselineskip}            % Title
+    {\huge \textbf{Icom IC-706 MkIIG \\ \vspace*{.5cm}}}
+
+    \LARGE RX Fan Mode Modification     % Subtitle
+    
+    \rule{\textwidth}{1pt}              % Bottom title rule (bar)
+    \vspace{1cm}
+    \large Written in \LaTeX\           % Set this size for the remaining titlepage.
+    
+    \vspace{3cm}                        % More authors can be inserted here with additional minipages.
+
+    \includegraphics[width=.7\textwidth]{../../img/ic706mkiig_lrg.jpg}
+    \begin{figure}[H]                   % Place caption HERE. Note: [H] requires float pkg
+        \centering                      % center caption
+        \caption{The Icom IC-706 MkIIG. \href{https://www.rigpix.com/icom/ic706mkiig.htm}{Image Credit}}
+    \end{figure}
+    \vfill
+
+    Joel Brigida, BSCE \\               % University and date information at bottom of titlepage.
+    R \& D, Engineering. \\
+    % src: https://www.overleaf.com/latex/templates/sample-report-title-page-for-an-university-assignment-or-project/qwqpmbbmfygn
+    \begin{minipage}{.5\textwidth}
+        \centering
+        {\normalsize \texttt{\href{https://github.com/ADolbyB/}{GitHub}}} \, 
+        {\normalsize \texttt{\href{https://www.linkedin.com/in/joelmbrigida/}{LinkedIn}}}
+    \end{minipage}
+
+\end{titlepage}
+
+\medskip
+\pagenumbering{arabic}                  % 1,2,3 type page numbering.
+\setcounter{page}{1}                    % Forces THIS page to be page 1
+% === ToC Page  1 ==========================================================
+\renewcommand{\contentsname}{Table of Contents} % Custom name for Table of Contents
+
+\begin{center}
+    \item \tableofcontents              % Table of Contents appears on page 1
+\end{center}
+
+\clearpage                              % Start main content on page 2
+% === Page 2 ===============================================================
+\begin{center}
+    \item \section{Disclaimer}
+\end{center}
+
+\bigskip
+Please note that none of the information in this manual is meant to be legal advise in any way. The author of
+this document does not assume any responsibility for the accuracy of the information in this document. This 
+document should be regarded as the author's own opinion, and nothing more for legal reasons even though this is a 
+well researched subject in the author's own expertise.
+
+\begin{center}
+    \item \section{Problem Description}
+\end{center}
+
+
+\medskip
+Unlike the IC-706, the IC-706MkIIG do not keep its internal blower running in receive mode. So, the radio becomes very 
+hot after half-hour or more of operation, especially in summer.
+
+A small 200 ohms 1 watt 1\% metal-film resistor connected in the PA board, between the switched +14v and the blower 
+positive lead will make it run very quietly, dropping the external body temperature of the MkIIG very near to that 
+found in the IC-706. The voltage applied by the resistor over the cooler is 4.7 volts and it is sufficient to start 
+and keep it running without any perceptible noise.
+
+Resist to temptation of increase the receive-mode blower speed (reducing the resistor ohmic value) avoiding to 
+transform your radio in a vacuum cleaner. After this modification, the measured radio body temperature after two 
+hours of receive-only mode was 37 \textdegree C at room temperature of 25 \textdegree C (98.6/77 \textdegree F).
+
+This mod will not alter the transmit behavior of the ventilation system that will remain operating as usual or even 
+better because the 46.5 mA auxiliary current supplied by this resistor will keep the blower drive transistor more 
+cooler. Another benefit is the reduced frequency drift in the VHF and UHF bands, SSB mode*. One of the resistor 
+lead is connected to the positive of the blower connector and the other in the RF choke (L613) loop as show in the 
+pictures.
+
+If you want added security, provide some isolation on the resistor leads. DO NOT short circuit the choke winding and 
+be very careful when soldering the resistor lead over the male PC connector pin.
+
+In this mod, there is no necessity of board removal and could be done in a matter of minutes. Only the radio bottom 
+cover must be removed (5 screws).
+
+Apparently, the original Icom IC-706 was designed so that the fan would blow constantly. When they designed the 
+mkII and mkIIg, they added a fan circuit to limit the noise and current drain. Unfortunately, once that circuit 
+gets marginal, it stops being useful and actually contributes to the radio's demise.
+
+Among the references is a rework involving the addition of a 200$ \Omega $ 1W resistor between L50 and J2 
+(on the IC-706mkII, at least) which will provide a constant voltage to keep the fan moving at a slower speed. 
+The benefit is that the fan controller won't need to start the fan, it just ramps up to the right speed.
+
+High temp is known as the worst enemy of ANY electronic component, both digital or analog devices. Now the Icom 
+IC-706MKIIG was opened it was time to do something about the high temperature during RX (receive) mode. A 220 ohms 
+resistor connected in the PA board, between the switched +13.8 volts and the blower positive lead will make the fan 
+run all the time, very quietly and dropping the case temperature to very near that one show by former 706. This mod 
+is active only in RX mode. It will not change or disable the TX (transmit) blower rotation that is controlled by the 
+temperature sensor. Therefore, in TX mode, the ventilation system will operate as usual.
+
+\clearpage
+% === Page xx ===============================================================
+\begin{center}
+    \item \section{References}
+\end{center}
+
+\begin{enumerate}
+    \item \href{https://mods-ham.darc.de/02_Mods/Icom-Mods/IC-706MKIIG/IC-706MKIIG_Fan\%20Mode.htm}
+        {\textit{iCOM IC-706MkIIG Fan Mode} : mods-ham.darc.de}
+    \item \href{https://www.phaysis.com/2018/08/11/icom-ic-706mkii-fan-mod/}
+        {\textit{iCOM IC-706MkIIG Fan Mod} : phaysis.com}
+    \item \href{https://www.pc2c.nl/icom_706.php}
+        {\textit{iCOM IC-706MkIIG Cooling Fan Modification} : pc2c.nl}
+    \item \href{https://ik4rvg.altervista.org/alterpages/files/IC-706MKII.pdf}
+        {\textit{KB2LJJ Radio Mods Database} : ik4rvg.altervista.org}
+\end{enumerate}
+
+\end{document}
