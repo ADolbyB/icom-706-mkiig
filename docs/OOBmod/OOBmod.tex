@@ -8,7 +8,7 @@
 \usepackage{enumerate}                  % Customize Enumerated Lists
 \usepackage{url}                        % used for custom \url{....} methods
 \renewcommand{\baselinestretch}{1.1}    % set default paragraph line spacing
-\hypersetup{%
+\hypersetup{
     colorlinks=true,                    % colored text rather than box outlined links (cleaner looking)
     urlcolor=blue
 }
@@ -41,7 +41,7 @@
     \includegraphics[width=.7\textwidth]{../../img/ic706mkiig_lrg.jpg}
     \begin{figure}[H]                   % Place caption HERE. Note: [H] requires float pkg
         \centering                      % center caption
-        \caption{The Icom IC-706 MkIIG. [image credit: rigpix.com]} % Place caption BELOW graphics.
+        \caption{The Icom IC-706 MkIIG. \href{https://www.rigpix.com/icom/ic706mkiig.htm}{Image Credit}} % Place caption BELOW graphics.
     \end{figure}
     \vfill
 
@@ -88,14 +88,11 @@ appropriately, like a 400 MHz to 470 MHz or a 450 MHz to 512 MHz band split, eit
 and 467MHz GMRS channels and can properly operate there.
 
 This modification is meant for MARS operators, who operate on bands which are adjacent or nearly adjacent to the ham 
-bands. A weak justification for this modification is the ``Life or Death'' scenario, where the operation on any 
-available frequency is allowed in the case of a human life in danger. This is a weak case because calling for help 
-on GMRS or CB from your HAM radio will do no good and is a waste of time. This case is more applicable to a citizen 
-picking up a police officer's radio and calling in ``MAYDAY! Officer Down, Shots Fired!!'' which the citizen may 
-have just witnessed. Such a transmission on an RF band where one is otherwise not permitted to operate is legally 
-authorized in such a scenario only because there is a threat of life or great bodily harm. Call for help, then
-acknowledge when proper help is dispatched, and stay off the radio unless called and/or help arrives. Do not
-attempt to ``ragchew'' with dispatch.
+bands. On the IC-706 MkIIG, this will also allow for operation in the 60 meter ham band (5.3 MHz), which was allocated 
+after the production of the radio. Also note that at the time of this writing, the FCC has now allocated new spectrum
+in the 60 meter ham band which was approved for woldwide use at the WRC-15 conference. A link to this new information
+is on the \href{https://www.arrl.org/news/fcc-allocates-60-meter-world-wide-amateur-band-approved-at-wrc-15-continues-amateur-use-of-four-addi}
+{ARRL site here}.
 
 \begin{center}
     \item \section{Description of the Modification}
@@ -103,7 +100,9 @@ attempt to ``ragchew'' with dispatch.
 
 This modification allows the radio to transmit out-of-band. Such a modification is necessary if, for example, you are 
 a member of the Military Auxiliary Radio System (MARS), in which out-of-band operation is permitted legally on an 
-FCC Part 97 radio meant for the ham bands. This modification is colloquially referred to as a ``MARS Mod''.
+FCC Part 97 radio meant for the ham bands. This modification is colloquially referred to as a ``MARS Mod''. This will
+also open up the radio transmitter so it will operate on the 60 meter amateur radio band, which was not allocated
+at the time of the IC-706 MkIIG production.
 
 \clearpage
 % === Page 3 ===============================================================
@@ -126,7 +125,7 @@ or 5-20 outlet. There are some cheap ground lug outlet adapters as seen
 \bigskip
 \begin{figure}[H]                       % Place image HERE. Note: [H] requires float pkg
     \centering                          % center image, scale to 100% of the text width:
-    \includegraphics[height=2.25in]{../../img/ESDGrounding.jpg}
+    \includegraphics[height=2.5in]{../../img/ESDGrounding.jpg}
     \caption{An example of an outlet ground lug to banana jack adapter.} % Place caption BELOW image.
 \end{figure}
 
@@ -140,14 +139,13 @@ side facing towards the technician, clip the wrist strap to the other side of th
 the non-dominant hand so it does not get in the way. Now the ESD mat and the technician are all grounded and at 
 equal potential. If you need to purchase an ESD mat kit, there are some kits 
 \href{https://www.amazon.com/s?k=ESD+mat+kit}{here [Amazon Link]}. Note in Figure 3 the alligator clips pull off to 
-reveal banana jacks. Detach the head of the radio since it is not needed now. Note that in Figure 3, the top lead 
-needs to be connected to the ground lug adapter, and the bottom lead with the wrist strap can be alligator clipped 
-to the mat for a proper connection.
+reveal banana jacks. The top lead needs to be connected to the ground lug adapter, and the bottom lead with the wrist 
+strap can be alligator clipped to the mat for a proper connection.
 
 \medskip
 \begin{figure}[H]                       % Place image HERE. Note: [H] requires float pkg
     \centering                          % center image, scale to 100% of the text width:
-    \includegraphics[width=0.9\textwidth]{../../img/staticMat.jpg}
+    \includegraphics[width=0.98\textwidth]{../../img/staticMat.jpg}
     \caption{Proper setup of an ESD mat with the radio body.}
 \end{figure}
 
@@ -161,29 +159,71 @@ connection to the mat. This still provides the proper electrical connection need
     \item \subsection{Step One}
 \end{center}
 
-Starting this modification requires detaching the remote head, and then removing the top cover 
-of the radio. The top cover is the cover with the speaker, and please note that the speaker can be left attached 
-to the cover during the procedure. There are 5 Phillips style screws: 3 on the face of the top panel, and one on
-each side. The cover then flips up toward the front. Refer to Figure 4 for a picture with the cover removed.
-The speaker wire lead can be disconnected as shown by pulling the two connector halves apart.
+\medskip
+Starting this modification requires removing the top cover of the radio. The top cover is the cover with the speaker, 
+and the speaker can be left attached to the cover during the procedure. There are 5 Phillips style screws: 
+3 in the middle of the top panel, and one on each side at the rear. The cover then flips up toward the front of the
+radio. The speaker wire lead can be disconnected as shown by pulling the two connector halves apart with the 
+technicians fingers. No pliers or picks are needed here and will only damage the connector. Refer to Figure 4 showing 
+the cover removed with the area of interest circled.
 
 \medskip
 \begin{figure}[H]                       % Place image HERE.
     \centering                          % center the image
-    \includegraphics[width=0.95\textwidth]{../../img/topCover.jpg}
+    \includegraphics[width=0.98\textwidth]{../../img/topCover2.jpeg}
     \caption{Removal of the top cover [5 screws] and speaker connection.} % Place caption BELOW image.
 \end{figure}
 
 \clearpage
 % === Page 6 ===============================================================
-After the top cover is removed, left of center on the front board is a row of jumper pads. 
-Refer to figure 3.2 for the exact location. The only resistor in the row of jumper pads is the one that must be 
-removed.
+\begin{center}
+    \item \subsection{Step Two}
+\end{center}
 
+Left of center on the front board is a row of jumper pads. Refer to figure 5 for the jumper/resistor location. The 
+only resistor in the row of jumper pads is the one that must be removed. In Figure 5, the pad with the resistor is 
+circled and already removed. This modification requires proficiency with a 
+\href{https://www.amazon.com/s?k=hot+air+rework+station}{hot air rework station}. In the author's 
+experience, the ``Yihua'' brand of rework stations has proved very reliable. This also requires use of 
+\href{https://www.amazon.com/s?k=smd+tweezers}{SMD tweezers} to remove the surface mount jumper after heated, and a 
+\href{https://www.amazon.com/s?k=magnifier+headset}{magnifier headset}. Heat up the jumper with moderate heat,
+set the blower to a very low speed so the component does not unsolder then blow across the board and get lost. Care 
+must be taken since heating up the jumper with the blower may cause adjacent components to heat up and
+melt their solder. This is only a problem if they are moved while the solder is melted. In the case of an 
+accidentally moved component, make sure the jumper is already removed, then go back after the solder hardens in a 
+minute or so, reheat the component and carefully move it back into place with the tweezers.
+
+\medskip
 \begin{figure}[H]                       % Place image HERE.
     \centering                          % center the image
-    %\includegraphics[height=5in]{../../assets/OOBmod/beforeMod1.jpg}
-    \caption{Location of the resistor that must be removed for the MARS mod to work.} % Place caption BELOW image.
+    \includegraphics[width=0.95\textwidth,angle=180]{../../img/IC706-MARS-mod.jpg} % Flip image 180 degrees
+    \caption{Location of the resistor that must be removed for the MARS mod to work. \\
+    \centering \href{http://www.kk4ice.com/?p=377}{Image Credit: KK4ICE}} % Place caption BELOW image.
+\end{figure}
+
+\clearpage
+% === Page 7 ===============================================================
+\begin{center}
+    \item \subsection{Step Three}
+\end{center}
+
+\medskip
+The modification is now complete. Set aside the removed jumper so it does not fall loose into the radio, and 
+reassemble in reverse order. Install the top cover, do not forget to reconnect the speaker connector, then reinstall
+the five screws. Now the faceplate can be reinstalled, the radio plugged in, and the radio can be tested on the 60
+meter band (5.3 MHz) with a dummy load and a wattmeter as shown below. For effective full scale power output, be sure 
+the RF power is set to maximum in the IC-706 MkIIG internal menu. If you are unsure how to do this, the author has 
+archived the \textit{IC-706 MkIIG Operating Guide} 
+\href{https://github.com/ADolbyB/icom-706-mkiig/blob/main/docs/manuals/IC-706MK2G_OG.pdf}{here on GitHub}. 
+Whistle loudly close to the mic with the transmitter keyed in SSB mode, and this should output maximum power, since 
+SSB is suppressed carrier.
+
+\medskip
+\begin{figure}[H]                       % Place image HERE. Note: [H] requires float pkg
+    \centering                          % center image, scale to 100% of the text width:
+    \includegraphics[width=0.98\textwidth]{../../img/TestSetup.jpg}
+    \caption{A proper test setup using a Bird 43 wattmeter and a 100 watt\\ 
+    \centering dummy load in VHF 2m band.}
 \end{figure}
 
 \end{document}
