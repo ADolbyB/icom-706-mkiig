@@ -44,7 +44,7 @@
     \includegraphics[width=.7\textwidth]{../../img/ic706mkiig_lrg.jpg}
     \begin{figure}[H]                   % Place caption HERE. Note: [H] requires float pkg
         \centering                      % center caption
-        \caption{The Icom IC-706 MkIIG. [image credit: rigpix.com]} % Place caption BELOW graphics.
+        \caption{The Icom IC-706 MkIIG. \href{https://www.rigpix.com/icom/ic706mkiig.htm}{Image Credit}}
     \end{figure}
     \vfill
 
@@ -81,8 +81,6 @@ this document does not assume any responsibility for the accuracy of the informa
 document should be regarded as the author's own opinion, and nothing more for legal reasons even though this is a 
 well researched subject in the author's own expertise.
 
-\clearpage
-% === Page 3 ===============================================================
 \begin{center}
     \item \section{Problem Description}
 \end{center}
@@ -91,12 +89,13 @@ well researched subject in the author's own expertise.
 This problem can be described as a random cycling of the radio power, and if severe enough, then the entire 
 unit may not turn on. I began to notice this rapid power cycling issue when going over bumps at first, until 
 the radio quit entirely and would not power on anymore. This problem is due to a broken trace from what appeared 
-to be humidity based moisture ingress under a black rubber pad spacer which was adhered to the PCB on top of 
-this trace. Most of the work required for the repair is gaining access to the underside of the top front board. 
-Care must be taken to NOT DAMAGE the RF coax under the covers of the radio.
+to be humidity based corrosion through the PCB solder mask layer due to moisture (humidity) ingress under a black 
+rubber pad spacer which was adhered to the PCB on top of this trace. The corrosion eventually wears through the PCB 
+trace after the solder mask is deteriorated enough. Most of the work required for the repair is gaining access to 
+the underside of the bottom front board.
 
 \clearpage
-% === Page 4 ===============================================================
+% === Page 3 ===============================================================
 \begin{center}
     \item \section{Repair Procedure}
 \end{center}
@@ -106,7 +105,7 @@ Care must be taken to NOT DAMAGE the RF coax under the covers of the radio.
 \end{center}
 
 \medskip
-In order to prevent any Electrostatic Discharge (ESD), an anti-static ESD mat should be used as shown in Figure 5. 
+In order to prevent any Electrostatic Discharge (ESD), an anti-static ESD mat should be used as shown in Figure 2. 
 Be sure the mat is grounded properly. An excellent ground source is the ground lug on a household 120VAC NEMA 5-15 
 or 5-20 outlet. There are some cheap ground lug outlet adapters as seen
 \href{https://www.amazon.com/s?k=Banana+Jack+Outlet+Adapter+Universal+Ground+3+Prong+Outlet+Earth+Connection}
@@ -121,7 +120,7 @@ or 5-20 outlet. There are some cheap ground lug outlet adapters as seen
 \end{figure}
 
 \clearpage
-% === Page 5 ===============================================================
+% === Page 4 ===============================================================
 \medskip
 Using the ground lug adapter and an ESD mat kit, ground the mat to the outlet ground, preferably with the side facing 
 away from the technician. At the side facing towards the technician, clip the wrist strap to the other side of the 
@@ -144,14 +143,15 @@ If the ESD mat does not have buttons to snap the leads onto (most do), then just
 connection to the mat. This still provides the proper electrical connection needed for equal potential.
 
 \clearpage
-% === Page 6 ===============================================================
+% === Page 5 ===============================================================
 \begin{center}
     \item \subsection{Step One}
 \end{center}
 
 \medskip
-This is a faily straightforward repair. There is a broken trace on the bottom side of the top front PCB, which 
-is under the black rubber spacer.
+For this repair to be successful, the front board on the bottom side of the radio must be removed and and flipped
+upside down. This is where the rubber pad and broken trace is located. The most care must be taken to unplug the 
+2 gray coax cables without damaging them.
 
 % Notice that the black spacer pad on the PCB in Figure 2 has some oxidation on it, as well as 
 % where the pad contacts the case on the underside of the PCB. Looking a bit closer reveals a trace running directly 
