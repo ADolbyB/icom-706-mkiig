@@ -3,7 +3,7 @@
 - This repo documents common repairs and modifications I have made to my Icom IC-706 MkIIG,<br>
 as well as an archive of publically available manuals for the radio
 
-## PDF Downloads:
+## iCOM Factory PDF Downloads:
 
 <p>
     <a href="https://github.com/ADolbyB/icom-706-mkiig/blob/main/docs/manuals/IC-706MK2G_IM.pdf" title="Download Instruction Manual"><img alt="MkIIG Instruction Manual DL" src="https://img.shields.io/badge/PDF-MkIIG_Instruction_Manual-blue?style=for-the-badge&link=https%3A%2F%2Fgithub.com%2FADolbyB%2Ficom-706-mkiig%2Fblob%2Fmain%2Fdocs%2Fmanuals%2FIC-706MK2G_IM.pdf"></a>&nbsp;&nbsp;
@@ -12,6 +12,12 @@ as well as an archive of publically available manuals for the radio
 </p>
 <p>
     <a href="https://github.com/ADolbyB/icom-706-mkiig/blob/main/docs/manuals/ic706mk2g_instability_reva.pdf" title="Download Instability Fix"><img alt="MkIIG Stability Fix" src="https://img.shields.io/badge/PDF-MkIIG_Instability_Fix-blue?style=for-the-badge&link=https%3A%2F%2Fgithub.com%2FADolbyB%2Ficom-706-mkiig%2Fblob%2Fmain%2Fdocs%2Fmanuals%2Fic706mk2g_instability_reva.pdf"></a>&nbsp;&nbsp;
+</p>
+
+## Repair and Modification Guides:
+
+<p>
+    <a href="https://github.com/ADolbyB/icom-706-mkiig/blob/main/docs/OOBmod/OOBmod.pdf" title="Download OOB MARS Mod Guide"><img alt="MkIIG MARS Mod Guide DL" src="https://img.shields.io/badge/PDF-MkIIG_MARS_Mod_Guide-blue?style=for-the-badge&logo=latex&logoColor=red&link=https%3A%2F%2Fgithub.com%2FADolbyB%2Ficom-706-mkiig%2Fblob%2Fmain%2Fdocs%2FOOBmod%2FOOBmod.pdf"></a>&nbsp;&nbsp;
 </p>
 
 ---
