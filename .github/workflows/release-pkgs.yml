@@ -17,7 +17,7 @@ jobs:
       - name: Compile Out of Band MARS Mod
         uses: xu-cheng/latex-action@v3
         with:
-          root_file: OOBMod.tex
+          root_file: OOBmod.tex
           working_directory: docs/OOBMod
 
       # Create GitHub Release
@@ -33,20 +33,20 @@ jobs:
           body: "Keep Self-Published and OEM manuals separate"
 
       # Create ZIP of ICOM factory PDFs
-      - name: Create Tutorials ZIP archive
+      - name: Create Icom factory manual ZIP archive
         run: |
           zip -j icomfactoryPDFs.zip \
             docs/manuals/IC-706MK2G_IM.pdf \
             docs/manuals/IC-706MK2G_OG.pdf \
             docs/manuals/IC-706MK2G_SM.pdf \
-            docs/manuals/ic706mk2g_instability_reva \
+            docs/manuals/ic706mk2g_instability_reva.pdf \
             2>/dev/null || true
 
-      # Upload Tutorial ZIP and Radio article as separate downloads
+      # Upload ZIP for manuals and Radio article as separate downloads
       - name: Upload release assets
         uses: softprops/action-gh-release@v2
         with:
           tag_name: ${{ github.ref_name }}
           files: |
             icomfactoryPDFs.zip
-            docs/OOBMod/OOBMod.pdf
+            docs/OOBMod/OOBmod.pdf
