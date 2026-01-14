@@ -18,7 +18,7 @@ jobs:
         uses: xu-cheng/latex-action@v3
         with:
           root_file: OOBmod.tex
-          working_directory: docs/OOBMod
+          working_directory: docs/OOBmod
 
       # Create GitHub Release
       - name: Create PDF Releases
@@ -49,4 +49,4 @@ jobs:
           tag_name: ${{ github.ref_name }}
           files: |
             icomfactoryPDFs.zip
-            docs/OOBMod/OOBmod.pdf
+            docs/OOBmod/OOBmod.pdf
