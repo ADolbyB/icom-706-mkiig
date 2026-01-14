@@ -1,0 +1,52 @@
+name: LaTeX and PDF Release # Does it work?
+
+on:
+  push:
+    tags:
+      - 'v*'
+  workflow_dispatch:
+
+jobs:
+  build-and-release:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      # Compile Publication 1
+      - name: Compile Out of Band MARS Mod
+        uses: xu-cheng/latex-action@v3
+        with:
+          root_file: OOBMod.tex
+          working_directory: docs/OOBMod
+
+      # Create GitHub Release
+      - name: Create PDF Releases
+        id: create_release
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: ${{ github.ref_name }}
+          name: Release ${{ github.ref_name }}
+          draft: false
+          prerelease: false
+          generate_release_notes: true
+          body: "Keep Self-Published and OEM manuals separate"
+
+      # Create ZIP of ICOM factory PDFs
+      - name: Create Tutorials ZIP archive
+        run: |
+          zip -j icomfactoryPDFs.zip \
+            docs/manuals/IC-706MK2G_IM.pdf \
+            docs/manuals/IC-706MK2G_OG.pdf \
+            docs/manuals/IC-706MK2G_SM.pdf \
+            docs/manuals/ic706mk2g_instability_reva \
+            2>/dev/null || true
+
+      # Upload Tutorial ZIP and Radio article as separate downloads
+      - name: Upload release assets
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: ${{ github.ref_name }}
+          files: |
+            icomfactoryPDFs.zip
+            docs/OOBMod/OOBMod.pdf
