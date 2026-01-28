@@ -88,6 +88,8 @@ All manuals are publicly available from Icom and archived here for convenience:
 
 **Factory Instability Fix** - A modified version of the Icom-issued repair bulletin for 15/17m instability
 
+Also see **[Releases](https://github.com/ADolbyB/icom-706-mkiig/releases)** for file bundles
+
 ---
 
 ## 🔧 Repair & Modification Guides
@@ -111,8 +113,7 @@ All manuals are publicly available from Icom and archived here for convenience:
 - Documented step-by-step procedure
 - Reversible modification
 
-> ⚠️ **Legal Notice:** 60m is legal for hams to operate on a secondary basis due to updated rules. Operation in the 60 meter ham band (5.3 - 5.4 MHz) was allocated after the production of this radio. Here is the current ARRL [Frequency Band Chart](https://www.arrl.org/graphical-frequency-allocations). At the time of this writing, the FCC has also [allocated new spectrum](https://www.arrl.org/news/fcc-allocates-60-meter-world-wide-amateur-band-approved-at-wrc-15-continues-amateur-use-of-four-addi) in the 60m band as well.
-
+> ⚠️ **Legal Notice:** 60m is legal for hams to operate on a secondary basis due to updated rules. Operation in the 60 meter ham band (5.3 - 5.4 MHz) was allocated after the production of this radio, which is why the out-of-band MARS Mod is perfect for this radio.
 
 ---
 
@@ -263,7 +264,7 @@ icom-706-mkiig/
 **Antenna System:**
 - Use [AH-4 Auto tuner](https://www.eham.net/reviews/view-product/1071)
 - AH-4 Comes weather proof with quality coax for outdoor use.
-- Find a [long whip](https://www.eham.net/reviews/view-product?id=5037) and connect to the AH-4
+- Find a [long whip](https://www.eham.net/reviews/view-product?id=5037) antenna and connect to the AH-4
 - Works great in my truck with this [Breedlove QD Ball Mount](https://breedlovemounts.com/store/ols/products/quick-disconnect-ball-mount-with-ring-terminal-connector) and their [Stake Pocket Bracket](https://breedlovemounts.com/store/ols/products/ezn-stake-pocket-bracket-short-4-degree-top-plate)
 - This setup will tune on 80m - 10m with very low SWR.
 - Add any other dual-band antenna for VHF/UHF FM operation if needed.
