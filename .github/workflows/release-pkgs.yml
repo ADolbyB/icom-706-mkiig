@@ -31,41 +31,16 @@ jobs:
             docs/manuals/ic706mk2g_instability_reva.pdf \
             2>/dev/null || true
 
+      - name: Prepare release notes
+        run: |
+          sed 's/{VERSION}/${{ github.ref_name }}/g' .github/release-notes.md > release-body.md
+
       # Create GitHub Release
       - name: Create PDF Releases
         id: create_release
         uses: softprops/action-gh-release@v2
         with:
-          tag_name: ${{ github.ref_name }}
-          name: Release ${{ github.ref_name }}
-          draft: false
-          prerelease: false
-          generate_release_notes: false
-          
-          # Custom release description using markdown. The pipe '|' allows multi-line text
-          body: |
-            📚 ICOM IC-706 MkIIG Docs - Release ${{ github.ref_name }}
-      
-            This release contains compiled PDFs from LaTeX source files:
-      
-            **Publications:**
-            - 📄 ICom IC-706 MkIIG Out of Band MARS Modification
-
-            **Factory Manuals:**
-            - 📦 ZIP file - Contains 4 manuals: Service, Instruction, Operating, and Instability Fix
-            
-            **Coming Soon:**
-            - 📄 ICom IC-706 MkIIG Power Cycling Repair
-            - 📄 ICom IC-706 MkIIG RX Fan Mode Modification
-            - 📄 ICom IC-706 MkIIG Screen Polarizer Repair
-      
-            Download the source code for all pre-compiled `.tex` files in the repository.
-
-      # Upload ZIP for manuals and Radio article as separate downloads
-      - name: Upload release assets
-        uses: softprops/action-gh-release@v2
-        with:
-          tag_name: ${{ github.ref_name }}
+          body_path: release-notes.md
           files: |
             icomfactoryPDFs.zip
             docs/OOBmod/OOBmod.pdf
