@@ -1,4 +1,4 @@
-name: LaTeX and PDF Release # Does it work?
+name: LaTeX and PDF Release
 
 on:
   push:
@@ -34,13 +34,20 @@ jobs:
       - name: Prepare release notes
         run: |
           sed 's/{VERSION}/${{ github.ref_name }}/g' .github/release-notes.md > release-body.md
+          # Verify the file was created
+          if [ ! -f release-body.md ]; then
+            echo "ERROR: release-body.md was not created!"
+            exit 1
+          fi
+          echo "Release notes prepared:"
+          cat release-body.md
 
       # Create GitHub Release
       - name: Create PDF Releases
         id: create_release
         uses: softprops/action-gh-release@v2
         with:
-          body_path: release-notes.md
+          body_path: release-body.md
           files: |
             icomfactoryPDFs.zip
             docs/OOBmod/OOBmod.pdf
